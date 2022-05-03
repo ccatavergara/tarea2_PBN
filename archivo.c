@@ -165,7 +165,10 @@ int main(){
         printf("%s\n",super[i]->name);
     }
     
-
+    qsort(super,contador,sizeof(superhero*),comparar[5]);
+    for(int i = 0; i<10;i++){
+        printf("%d %d\n",i,super[i]->combat);
+    }
 
 
     for(int i = 0;i<7*contador;i++){

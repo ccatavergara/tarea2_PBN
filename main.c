@@ -85,7 +85,7 @@ void topvalue(int value,char *habilidad,struct Superhero **supers,int contador){
             break;
         }
     }
-    char *c = malloc(sizeof(char));
+    char *c = malloc(10*sizeof(char));
     printf("\nDe que supeheroe desea ver su informacion? ");
     scanf("%[^\n]",c); //permite guardar todo el nombre del superheroe
     hero(c, supers,contador); //hace la funcion hero para encontrar el superheroe de la lista
@@ -110,7 +110,7 @@ void tophero(char*name, char *habilidad, struct Superhero **supers,int contador)
             }
         }
     }
-    char *c = malloc(sizeof(char));
+    char *c = malloc(10*sizeof(char));
     printf("\nDe que supeheroe desea ver su informacion? ");
     scanf("%[^\n]",c);
     hero(c, supers,contador);
@@ -175,7 +175,7 @@ int main(int argc, char **argv){
         }
         if (strcmp(argv[1],"salir") == 0){
             printf("Termino la revision de datos."); //corta la revision de datos
-            exit(1);
+            exit(1); 
         }
     }
     if(argc == 3){
@@ -235,7 +235,6 @@ int main(int argc, char **argv){
             free(name);
         }
     }
-    //hay que liberar todos los datos entregados.
     for(int i = 0;i<7*contador;i++){
         free(datos[i]); 
     }
@@ -244,5 +243,5 @@ int main(int argc, char **argv){
     }
     free(linea);
     fclose(file);
-    return 0;
-}
+    return 0; //hay que liberar todos los datos entregados.
+} 
